@@ -1,0 +1,53 @@
+::: {.tarea}
+
+**Qué entregas:** tu archivo `sesion2_trabajo.Rmd` (una copia de este documento con tus respuestas en la carpeta `sesion-2/` de tu repositorio de GitHub.
+
+**Qué se valora:** que compruebes con los datos lo que calculas y que expliques tu decisión con tus palabras. Que el código se ejecute es necesario, pero no suficiente.
+:::
+
+
+El analista jefe te escribe:
+
+> "Para el modelo quiero una base limpia, sin un solo faltante. Quédate solo con los jugadores que tienen completas las cinco pruebas del Combine: 40 yardas, salto vertical, salto largo, press de banca y *shuttle*. Así nadie podrá decir que inventamos datos."
+
+**1. Anticipa.** Antes de ejecutar nada: ¿cuántos jugadores de los 3,197 crees que quedarán?
+
+**2. Haz lo que pide.** Completa los `___` y quita los signos de gato (#) para que el codigo se ejecute:
+
+```{r}
+# base_completa <- base %>%
+# filter(!is.na(forty), !is.na(vert_leap), !is.na(broad_jump),
+# !is.na(bench_press), !is.na(shuttle))
+# nrow(base_completa)
+```
+
+
+**3. Compara** `base` y `base_completa`:
+
+- ¿Cuántos jugadores hay de cada posición? (`table(base$simple_pos)` y lo mismo con `base_completa`)
+
+```{r}
+#aqui va tu codigo
+table(base$career_pos)
+table(base$simple_pos)
+```
+
+
+- ¿Cuál es la mediana de `career_av` en cada una?
+
+```{r}
+#aqui va tu codigo
+median(base$career_av)
+median(base_completa$career_av)
+```
+
+- ¿Cuántos jugadores de primera ronda hay en cada una? Pista: `sum(base$draft_round == 1)`.
+```{r}
+#aqui va tu codigo
+sum(base$draft_round==1)
+sum(base_completa$draft_round==1)
+```
+
+
+
+**Para entregar:** en RStudio, botón **Knit** para comprobar que todo se ejecuta. Después, en GitHub, entra a tu repositorio, abre la carpeta `sesion-2`, **Add file > Upload files**, sube `sesion2_trabajo.Rmd` y escribe un mensaje como *Agregar trabajo de la sesión 2*. 
